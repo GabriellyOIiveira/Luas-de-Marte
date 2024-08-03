@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:url("galaxy.jpg");
+    overflow: hidden;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.sol {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: rgb(255, 251, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(255, 196, 128);
+}
+
+.marte,
+.phobos {
+    position: absolute;
+    border-style: solid;
+    border-color: rgb(228, 205, 184) transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.marte {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+.phobos {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 2.7s linear infinite;
+}
+
+.marte::before,
+.phobos::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.marte::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: rgb(255, 102, 0);
+}
+
+.phobos::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.7em;
+    height: 1.7em;
+    background-color: rgb(255, 203, 179);
+}
+.marte,
+.deimos {
+    position: absolute;
+    border-style: solid;
+    border-color: rgb(231, 194, 160) transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.deimos {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 7.5s linear infinite;
+}
+.marte::before,
+.deimos::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.deimos::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: rgb(224, 147, 102);
+}
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
